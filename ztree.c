@@ -88,6 +88,11 @@ int main(int argc, char** args) {
 		}
 	}
 
+	for(int i = 1; i < argc; i++)
+		if(args[i][0] != '-')
+			strcpy(cwd, args[i]);
+
+
 	printf("Analyzing working dir \"%s\"\n", cwd);
 	struct direntry root = (struct direntry){
 		cwd, cwd,
